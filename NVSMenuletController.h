@@ -11,8 +11,9 @@
 #import "NVSPowerMonitor.h"
 #import "NVSPowerMonitorDelegate.h"
 #import "NVSDisplayControl.h"
+#import "NVSDisplayControlDelegate.h"
 
-@interface NVSMenuletController : NSResponder<NVSPowerMonitorDelegate> {
+@interface NVSMenuletController : NSResponder<NVSPowerMonitorDelegate, NVSDisplayControlDelegate> {
 	NVSPowerMonitor* powerMonitor;
 	NVSDisplayControl* displayControl;
 	
@@ -22,6 +23,9 @@
 	
 	NSStatusItem* statusItem;
 	NSImage* statusImage;
+	
+	NSImage* noSleepImage;
+	NSImage* sleepImage;
 	
 	NVSPowerStatus powerStatus;
 }

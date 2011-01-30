@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <IOKit/pwr_mgt/IOPMLib.h>
+#import "NVSDisplayControlDelegate.h"
 
 @interface NVSDisplayControl : NSObject {
 	BOOL canDisable;
@@ -17,12 +18,14 @@
 	IOPMAssertionID idleAssertionId;
 	
 	BOOL isCurrentlyDisabled;
+	
+	id<NVSDisplayControlDelegate> delegate;
 }
 
 @property (assign) BOOL canDisable;
 @property (assign) BOOL shouldDisable;
 
-- (id) initWithShouldDisable:(BOOL) disable;
+- (id) initWithShouldDisable:(BOOL) disable andDelegate:(id<NVSDisplayControlDelegate>)d;
 
 - (void) toggleDisplaySleep;
 - (void) updateDisplaySleep;

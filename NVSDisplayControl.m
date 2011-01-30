@@ -13,13 +13,15 @@
 @synthesize canDisable;
 @synthesize shouldDisable;
 
-- (id) initWithShouldDisable:(BOOL)disable
+- (id) initWithShouldDisable:(BOOL)disable andDelegate:(id<NVSDisplayControlDelegate>)d
 {
 	if (self = [super init])
 	{
 		shouldDisable = disable;
 		canDisable = NO;
 		isCurrentlyDisabled = NO;
+		
+		delegate = d;
 	}
 	
 	return self;
@@ -55,6 +57,7 @@
 		}
 		
 		isCurrentlyDisabled = YES;
+		[delegate displaySleepDisabled];
 	}
 	else if (isCurrentlyDisabled)
 	{
@@ -87,6 +90,7 @@
 		}
 		
 		isCurrentlyDisabled = NO;
+		[delegate displaySleepEnabled];
 	}
 }
 

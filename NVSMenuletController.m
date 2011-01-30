@@ -17,7 +17,7 @@
 - (void) awakeFromNib
 {	
 	powerMonitor = [[NVSPowerMonitor alloc] initWithDelegate:self];
-	displayControl = [[NVSDisplayControl alloc] initWithShouldDisable:NO];
+	displayControl = [[NVSDisplayControl alloc] initWithShouldDisable:NO andDelegate:self];
 	
 	[powerMonitor pollForPowerStatus];
 
@@ -25,10 +25,15 @@
 	
 	statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"161" ofType:@"png"]];
 	
+	noSleepImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_nosleep" ofType:@"png"]];
+	sleepImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"display_sleep" ofType:@"png"]];
+	
 	statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
 	
-	[statusItem setImage:statusImage];
+	[statusItem setImage:sleepImage];
 	[statusItem setHighlightMode:YES];
+	
+	[menu setAutoenablesItems:NO];
 	
 	[statusItem setMenu:menu];
 	[statusItem setToolTip:@"Never Sleep Display"];
@@ -51,17 +56,27 @@
 {
 	exit(0);
 }
+							   
+- (void) displaySleepDisabled
+{
+	[statusItem setImage:noSleepImage];
+}
+
+- (void) displaySleepEnabled
+{
+	[statusItem setImage:sleepImage];
+}
 
 - (void) powerStatusIsNow:(NVSPowerStatus)currentStatus
 {
 	NSLog(@"setPowerStatus: %d", currentStatus);
-	BOOL shouldUpdate = powerStatus != currentStatus;
+	BOOL powerStatusHasChanged = powerStatus != currentStatus;
 	
 	powerStatus = currentStatus;
 	
 	BOOL inWall = powerStatus == NVSPowerStatus_Wall;
 	
-	if (shouldUpdate)
+	if (powerStatusHasChanged)
 	{
 		[displayControl setCanDisable:inWall];
 	

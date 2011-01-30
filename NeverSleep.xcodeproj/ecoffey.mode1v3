@@ -276,8 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>6</integer>
-									<integer>4</integer>
+									<integer>5</integer>
+									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NVSMenuletController.m</string>
+								<string>NVSPowerMonitor.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,28 +327,27 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NVSMenuletController.m</string>
+										<string>NVSPowerMonitor.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>A0D483E012E7F0E8009E7F19</string>
+										<string>A0D4841712EF97C0009E7F19</string>
 										<key>history</key>
 										<array>
 											<string>A0D47D6512DC127A009E7F19</string>
 											<string>A0D47D6612DC127A009E7F19</string>
 											<string>A0D47F9112DE7F47009E7F19</string>
 											<string>A0D47F9212DE7F47009E7F19</string>
-											<string>A0D483D512E7F0E8009E7F19</string>
-											<string>A0D483D612E7F0E8009E7F19</string>
 											<string>A0D483D712E7F0E8009E7F19</string>
 											<string>A0D483D812E7F0E8009E7F19</string>
-											<string>A0D483D912E7F0E8009E7F19</string>
-											<string>A0D483DA12E7F0E8009E7F19</string>
-											<string>A0D483DB12E7F0E8009E7F19</string>
-											<string>A0D483DC12E7F0E8009E7F19</string>
-											<string>A0D483DD12E7F0E8009E7F19</string>
-											<string>A0D483DE12E7F0E8009E7F19</string>
-											<string>A0D483DF12E7F0E8009E7F19</string>
+											<string>A0D483F612E96480009E7F19</string>
+											<string>A0D483F812E96480009E7F19</string>
+											<string>A0D483F912E96480009E7F19</string>
+											<string>A0D483FA12E96480009E7F19</string>
+											<string>A0D483FB12E96480009E7F19</string>
+											<string>A0D4840912E9FCA6009E7F19</string>
+											<string>A0D4840A12E9FCA6009E7F19</string>
+											<string>A0D4840B12E9FCA6009E7F19</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -546,14 +545,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>A0D483E112E7F0E8009E7F19</string>
 		<string>A0D47E1912DC1FAD009E7F19</string>
 		<string>A0D483B212E7EC0C009E7F19</string>
 		<string>A0D483B312E7EC0C009E7F19</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>A0D47D2712DC0A85009E7F19</string>
 		<string>/Users/ecoffey/Projects/NeverSleep/NeverSleep.xcodeproj</string>
-		<string>1C78EAAD065D492600B07095</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1280 719 0 0 1280 778 </string>
@@ -577,7 +575,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>NVSPowerMonitor.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -594,6 +592,8 @@
 							<string>298pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

@@ -16,6 +16,8 @@
 		A0D47E9212DD2276009E7F19 /* 161.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D47E9112DD2276009E7F19 /* 161.png */; };
 		A0D4805912E214ED009E7F19 /* NVSPowerMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D4805812E214ED009E7F19 /* NVSPowerMonitor.m */; };
 		A0D480B612E273AA009E7F19 /* NVSDisplayControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D480B512E273AA009E7F19 /* NVSDisplayControl.m */; };
+		A0D483EC12E9627B009E7F19 /* display_nosleep.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D483EB12E9627B009E7F19 /* display_nosleep.png */; };
+		A0D483EE12E96288009E7F19 /* display_sleep.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D483ED12E96288009E7F19 /* display_sleep.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		A0D4806212E2165D009E7F19 /* NVSPowerStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSPowerStatus.h; sourceTree = "<group>"; };
 		A0D480B412E273AA009E7F19 /* NVSDisplayControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSDisplayControl.h; sourceTree = "<group>"; };
 		A0D480B512E273AA009E7F19 /* NVSDisplayControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVSDisplayControl.m; sourceTree = "<group>"; };
+		A0D483EB12E9627B009E7F19 /* display_nosleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = display_nosleep.png; sourceTree = "<group>"; };
+		A0D483ED12E96288009E7F19 /* display_sleep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = display_sleep.png; sourceTree = "<group>"; };
+		A0D483EF12E96349009E7F19 /* NVSDisplayControlDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSDisplayControlDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,7 @@
 				A0D4806212E2165D009E7F19 /* NVSPowerStatus.h */,
 				A0D480B412E273AA009E7F19 /* NVSDisplayControl.h */,
 				A0D480B512E273AA009E7F19 /* NVSDisplayControl.m */,
+				A0D483EF12E96349009E7F19 /* NVSDisplayControlDelegate.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -120,6 +126,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A0D483ED12E96288009E7F19 /* display_sleep.png */,
+				A0D483EB12E9627B009E7F19 /* display_nosleep.png */,
 				A0D47E9112DD2276009E7F19 /* 161.png */,
 				8D1107310486CEB800E47090 /* NeverSleep-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
@@ -190,6 +198,8 @@
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
 				A0D47E9212DD2276009E7F19 /* 161.png in Resources */,
+				A0D483EC12E9627B009E7F19 /* display_nosleep.png in Resources */,
+				A0D483EE12E96288009E7F19 /* display_sleep.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
