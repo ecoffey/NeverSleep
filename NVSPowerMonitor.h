@@ -10,7 +10,8 @@
 #import "NVSPowerMonitorDelegate.h"
 
 @interface NVSPowerMonitor : NSObject {
-
+	@private
+	id<NVSPowerMonitorDelegate> delegate;
 }
 
 - (id) initWithDelegate:(id<NVSPowerMonitorDelegate>) d;
