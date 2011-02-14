@@ -8,14 +8,36 @@
 
 #import "NVSMenuletController.h"
 
+@interface NVSMenuletController ()
+- (void) updateStateAndUI;
+- (void) updateMenu;
+- (BOOL) canDisable;
+@end
+
 @implementation NVSMenuletController
 
 @synthesize menu;
 @synthesize enableMenuItem;
 @synthesize disableMenuItem;
+@synthesize preferenceWindowController;
+
++ (void) initialize
+{
+	NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+	NSDictionary* defaults = [NSDictionary dictionaryWithObject:@"NO" forKey:@"DisableOnNoPower"];
+	
+	[userDefaults registerDefaults:defaults];
+}
 
 - (void) awakeFromNib
 {	
+	NSUserDefaults* userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults
+	 addObserver:self
+	 forKeyPath:@"DisableOnNoPower"
+	 options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+	 context:NULL];
+	
 	powerMonitor = [[NVSPowerMonitor alloc] initWithDelegate:self];
 	displayControl = [[NVSDisplayControl alloc] initWithShouldDisable:NO andDelegate:self];
 	
@@ -38,8 +60,7 @@
 	[statusItem setMenu:menu];
 	[statusItem setToolTip:@"Never Sleep Display"];
 	
-	[self updateMenu];
-	[displayControl updateDisplaySleep];
+	[self updateStateAndUI];
 }
 
 - (IBAction) displaySleepToggled:(id)sender
@@ -48,8 +69,12 @@
 
 	[displayControl toggleDisplaySleep];
 	
-	[self updateMenu];
-	[displayControl updateDisplaySleep];
+	[self updateStateAndUI];
+}
+
+- (IBAction) showPreferences:(id)sender
+{
+	[preferenceWindowController showPreferences];
 }
 
 - (IBAction) quit:(id)sender
@@ -74,15 +99,19 @@
 	
 	powerStatus = currentStatus;
 	
-	BOOL inWall = powerStatus == NVSPowerStatus_Wall;
-	
 	if (powerStatusHasChanged)
 	{
-		[displayControl setCanDisable:inWall];
-	
-		[self updateMenu];
-		[displayControl updateDisplaySleep];
+		[self updateStateAndUI];
 	}
+}
+
+- (void) updateStateAndUI
+{
+	BOOL canDisable = [self canDisable];
+	[displayControl setCanDisable:canDisable];
+	
+	[self updateMenu];
+	[displayControl updateDisplaySleep];
 }
 
 - (void) updateMenu
@@ -90,10 +119,26 @@
 	[enableMenuItem setHidden:![displayControl shouldDisable]];
 	[disableMenuItem setHidden:[displayControl shouldDisable]];
 	
+	BOOL canDisable = [self canDisable];
+	
+	[enableMenuItem setEnabled:canDisable];
+	[disableMenuItem setEnabled:canDisable];	
+}
+
+- (BOOL) canDisable
+{
+	BOOL disableOnNoPower = [[NSUserDefaults standardUserDefaults] boolForKey:@"DisableOnNoPower"];
 	BOOL inWall = powerStatus == NVSPowerStatus_Wall;
 	
-	[enableMenuItem setEnabled:inWall];
-	[disableMenuItem setEnabled:inWall];	
+	return inWall || disableOnNoPower;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+					  ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+	[self updateStateAndUI];
 }
 
 @end

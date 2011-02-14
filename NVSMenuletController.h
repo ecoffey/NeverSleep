@@ -12,6 +12,7 @@
 #import "NVSPowerMonitorDelegate.h"
 #import "NVSDisplayControl.h"
 #import "NVSDisplayControlDelegate.h"
+#import "NVSPreferenceWindowController.h"
 
 @interface NVSMenuletController : NSResponder<NVSPowerMonitorDelegate, NVSDisplayControlDelegate> {
 	NVSPowerMonitor* powerMonitor;
@@ -28,15 +29,19 @@
 	NSImage* sleepImage;
 	
 	NVSPowerStatus powerStatus;
+	
+	NVSPreferenceWindowController* preferenceWindowController;
 }
 
 @property (assign) IBOutlet NSMenu* menu;
 @property (assign) IBOutlet NSMenuItem* enableMenuItem;
 @property (assign) IBOutlet NSMenuItem* disableMenuItem;
+@property (assign) IBOutlet NVSPreferenceWindowController* preferenceWindowController;
+
++ (void) initialize;
 
 - (IBAction) displaySleepToggled:(id)sender;
+- (IBAction) showPreferences:(id)sender;
 - (IBAction) quit:(id)sender;
-
-- (void) updateMenu;
 
 @end

@@ -11,6 +11,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		A0AA8BC512FB900400E7CA8F /* PreferencePanes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0AA8BC412FB900400E7CA8F /* PreferencePanes.framework */; };
+		A0AA8BD512FB906300E7CA8F /* NVSPreferenceWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0AA8BD412FB906300E7CA8F /* NVSPreferenceWindowController.m */; };
 		A0D47D2F12DC0C07009E7F19 /* NVSMenuletController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0D47D2E12DC0C07009E7F19 /* NVSMenuletController.m */; };
 		A0D47DE112DC1C04009E7F19 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D47DE012DC1C04009E7F19 /* IOKit.framework */; };
 		A0D47E9212DD2276009E7F19 /* 161.png in Resources */ = {isa = PBXBuildFile; fileRef = A0D47E9112DD2276009E7F19 /* 161.png */; };
@@ -31,6 +33,9 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* NeverSleep-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NeverSleep-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* NeverSleep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeverSleep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0AA8BC412FB900400E7CA8F /* PreferencePanes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PreferencePanes.framework; path = System/Library/Frameworks/PreferencePanes.framework; sourceTree = SDKROOT; };
+		A0AA8BD312FB906300E7CA8F /* NVSPreferenceWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSPreferenceWindowController.h; sourceTree = "<group>"; };
+		A0AA8BD412FB906300E7CA8F /* NVSPreferenceWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVSPreferenceWindowController.m; sourceTree = "<group>"; };
 		A0D47D2D12DC0C07009E7F19 /* NVSMenuletController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NVSMenuletController.h; sourceTree = "<group>"; };
 		A0D47D2E12DC0C07009E7F19 /* NVSMenuletController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NVSMenuletController.m; sourceTree = "<group>"; };
 		A0D47DE012DC1C04009E7F19 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -53,6 +58,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				A0D47DE112DC1C04009E7F19 /* IOKit.framework in Frameworks */,
+				A0AA8BC512FB900400E7CA8F /* PreferencePanes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +77,8 @@
 				A0D480B412E273AA009E7F19 /* NVSDisplayControl.h */,
 				A0D480B512E273AA009E7F19 /* NVSDisplayControl.m */,
 				A0D483EF12E96349009E7F19 /* NVSDisplayControlDelegate.h */,
+				A0AA8BD312FB906300E7CA8F /* NVSPreferenceWindowController.h */,
+				A0AA8BD412FB906300E7CA8F /* NVSPreferenceWindowController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -86,6 +94,7 @@
 		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A0AA8BC412FB900400E7CA8F /* PreferencePanes.framework */,
 				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
 				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
 				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
@@ -214,6 +223,7 @@
 				A0D47D2F12DC0C07009E7F19 /* NVSMenuletController.m in Sources */,
 				A0D4805912E214ED009E7F19 /* NVSPowerMonitor.m in Sources */,
 				A0D480B612E273AA009E7F19 /* NVSDisplayControl.m in Sources */,
+				A0AA8BD512FB906300E7CA8F /* NVSPreferenceWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

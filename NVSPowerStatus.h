@@ -7,8 +7,8 @@
  *
  */
 
-#define NVSPowerStatus_Wall 1
-#define NVSPowerStatus_Battery 2
-#define NVSPowerStatus_Offline 3
-
-typedef int NVSPowerStatus;
+typedef enum {
+	NVSPowerStatus_Wall,
+	NVSPowerStatus_Battery,
+	NVSPowerStatus_Offline
+} NVSPowerStatus;
